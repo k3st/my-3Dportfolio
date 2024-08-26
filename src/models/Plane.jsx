@@ -9,11 +9,15 @@ const Plane = ({ isRotating, ...props }) => {
 
   useEffect(() => {
     // console.log({ isRotating });
-    if (isRotating) {
-      actions["Take 001"].play();
-    } else {
-      actions["Take 001"].stop();
-    }
+
+    // // Play animation when going around hence stop
+    //   if (isRotating) {
+    //     actions["Take 001"].stop();
+    //   } else {
+    //     actions["Take 001"].play();
+    //   }
+
+    actions["Take 001"].play();
   }, [actions, isRotating]);
 
   return (
