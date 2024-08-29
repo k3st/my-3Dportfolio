@@ -7,11 +7,21 @@ const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const handleChange = () => {};
-  const handleFocus = () => {};
-  const handleBlur = () => {};
-  const handleSubmit = () => {};
+  const handleFocus = () => setCurrentAnimation("walk");
+  const handleBlur = () => setCurrentAnimation("idle");
+  const handleSubmit = () => {
+    // 02:03:20
+    // Add setTimeout() after submit form and reset the form data
+    // setTimeout(()=>{setCurrentAnimation('idle')
+    // setForm({name:'',email:'',message:''});
+    // }, [3000])
+
+    //After submission, command the Fox to 'run'
+    setCurrentAnimation("hit");
+  };
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
@@ -82,6 +92,7 @@ const Contact = () => {
           <ambientLight intensity={0.5} />
           <Suspense fallback={<Loader />}>
             <Fox
+              currentAnimation={currentAnimation}
               position={[0.5, 0.35, 0]}
               rotation={[12.6, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
