@@ -12,3 +12,4 @@ npm install @react-three/fiber
 npm install @react-three/drei
 npm install @react-spring/three
 npm install @emailjs/browser
+npm i react-vertical-timeline-component
