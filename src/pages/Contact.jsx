@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import Fox from "../models/Fox";
 import useAlert from "../hooks/useAlert";
 import Loader from "../components/Loader";
+import Alert from "../components/Alert";
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -46,19 +47,24 @@ const Contact = () => {
           text: "Thank you for your message 😃",
           type: "success",
         });
-
-        setForm({ name: "", email: "", message: "" });
+        // Add setTimeout() after submit form and reset the form data
+        setTimeout(() => {
+          hideAlert();
+          setCurrentAnimation("idle");
+          setForm({ name: "", email: "", message: "" });
+        }, [3000]);
         console.log("MSG SUBMITTED");
       })
       .catch((err) => {
         setIsLoading(false);
         console.log(err);
+        showAlert({
+          show: true,
+          text: "I didn't receive your message",
+          type: "danger",
+        });
       });
     // 02:03:20
-    // Add setTimeout() after submit form and reset the form data
-    // setTimeout(()=>{setCurrentAnimation('idle')
-    // setForm({name:'',email:'',message:''});
-    // }, [3000])
 
     //After submission, command the Fox to 'run'
     setCurrentAnimation("hit");
@@ -66,6 +72,7 @@ const Contact = () => {
 
   return (
     <section className="relative flex lg:flex-row flex-col max-container">
+      {alert.show && <Alert {...alert} />}
       <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
 
