@@ -14,31 +14,41 @@ const InfoBox = ({ text, link, btnText }) => (
 const renderContent = {
   1: (
     <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
-      Hi, I am <span className="font-semibold text-orange-300  ">Kent </span>
-      from Pampanga, Philippines
+      Hi, I am <span className="font-semibold text-orange-300  ">Kent 👋</span>
+      <br />A Web Developer from Philippines
     </h1>
   ),
   2: (
-    <InfoBox
-      text="Hi, I am currently a Service Desk Engineer under Phitopolis Company"
-      link="/about"
-      btnText=" BOOM! 💣💥🧨"
-    />
+    <>
+      <div className="info-box">
+        <p className="font-medium sm:text-xl text-center">
+          I am currently a Service Desk Engineer under Phitopolis"
+        </p>
+      </div>
+      <div className="neo-brutalism-white neo-btn">
+        via a BPO Company: Boomering 💜💙
+      </div>
+    </>
   ),
   3: (
     <InfoBox
-      text="Hello 2, I am currently a Service Desk Engineer under Phitopolis Company"
+      text="I'm aspiring to be a Front-end Developer and hopefully some be a capable and well known Software Engineer."
       link="/about"
       btnText="
-           BOOM! 💣💥🧨"
+           More Details About me"
     />
   ),
   4: (
     <InfoBox
-      text="Hello 3, I am currently a Service Desk Engineer under Phitopolis Company"
-      link="/about"
+      text={
+        <>
+          "Feel free to reach out to me ANYTIME. <br />
+          I’ll be in touch with you as well!"
+        </>
+      }
+      link="/contact"
       btnText="
-           BOOM! 💣💥🧨"
+           Contact me "
     />
   ),
 };

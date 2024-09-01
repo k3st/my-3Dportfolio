@@ -1,4 +1,11 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import {
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  phitopolis,
+  hooli,
+} from "../assets/images";
 import {
   car,
   contact,
@@ -33,11 +40,6 @@ export const skills = [
     type: "Frontend",
   },
   {
-    imageUrl: express,
-    name: "Express",
-    type: "Backend",
-  },
-  {
     imageUrl: git,
     name: "Git",
     type: "Version Control",
@@ -58,21 +60,6 @@ export const skills = [
     type: "Frontend",
   },
   {
-    imageUrl: mongodb,
-    name: "MongoDB",
-    type: "Database",
-  },
-  {
-    imageUrl: motion,
-    name: "Motion",
-    type: "Animation",
-  },
-  {
-    imageUrl: mui,
-    name: "Material-UI",
-    type: "Frontend",
-  },
-  {
     imageUrl: nextjs,
     name: "Next.js",
     type: "Frontend",
@@ -88,78 +75,46 @@ export const skills = [
     type: "Frontend",
   },
   {
-    imageUrl: redux,
-    name: "Redux",
-    type: "State Management",
-  },
-  {
-    imageUrl: sass,
-    name: "Sass",
-    type: "Frontend",
-  },
-  {
     imageUrl: tailwindcss,
     name: "Tailwind CSS",
     type: "Frontend",
   },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Frontend",
-  },
+  // {
+  //   imageUrl: sass,
+  //   name: "Sass",
+  //   type: "Frontend",
+  // },
+  // {
+  //   imageUrl: typescript,
+  //   name: "TypeScript",
+  //   type: "Frontend",
+  // },
+  // {
+  //   imageUrl: mongodb,
+  //   name: "MongoDB",
+  //   type: "Database",
+  // },
 ];
 
 export const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#accbe1",
-    date: "March 2020 - April 2021",
+    title: "Service Desk Engineer",
+    company_name: "Phitopolis",
+    icon: phitopolis,
+    iconBg: "#A7C7E7",
+    date: "January 2024 - 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni natussuscipit dolor magnam non nam iusto! Distinctio cum nulla, quo error molestias amet! Culpa, possimus nostrum. Sed deleniti perspiciatis reiciendis.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#fbc3bc",
+    title: "Mobile App Developer",
+    company_name: "Hooli Software",
+    icon: hooli,
+    iconBg: "#fff",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#b7e4c7",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#a2d2ff",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni natussuscipit dolor magnam non nam iusto! Distinctio cum nulla, quo error molestias amet! Culpa, possimus nostrum. Sed deleniti perspiciatis reiciendis.",
     ],
   },
 ];
