@@ -1,18 +1,59 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Fox from "../models/Fox";
+import useAlert from "../hooks/useAlert";
 import Loader from "../components/Loader";
 
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const { alert, showAlert, hideAlert } = useAlert();
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
-  const handleChange = () => {};
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
   const handleFocus = () => setCurrentAnimation("walk");
   const handleBlur = () => setCurrentAnimation("idle");
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    console.log(import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
+    console.log(import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID);
+    console.log(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
+
+    e.preventDefault();
+    setIsLoading(true);
+    emailjs
+      .send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Kent Mercado",
+          from_email: form.email,
+          to_email: "kiddoturtle04@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setIsLoading(false);
+        // TODO: SHOW success message
+        // TODO: HIDE alert
+        showAlert({
+          show: true,
+          text: "Thank you for your message 😃",
+          type: "success",
+        });
+
+        setForm({ name: "", email: "", message: "" });
+        console.log("MSG SUBMITTED");
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        console.log(err);
+      });
     // 02:03:20
     // Add setTimeout() after submit form and reset the form data
     // setTimeout(()=>{setCurrentAnimation('idle')
